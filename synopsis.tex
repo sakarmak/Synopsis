@@ -1,0 +1,398 @@
+\documentclass[11.5pt, a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+\usepackage{geometry}
+\usepackage{float}
+\usepackage{amsmath}
+\usepackage{slashed}
+\usepackage{multicol}
+\usepackage{hyperref}
+\usepackage[T1]{fontenc}
+\usepackage{upgreek}
+\usepackage{textgreek}
+\usepackage{helvet}
+\usepackage{hepparticles}
+\usepackage{heppennames}
+%\usepackage{ptdr-definitions}
+%\usepackage{}
+
+%\usepackage{utopia}
+\hypersetup{
+	colorlinks=true,
+	citecolor=red,
+	linkcolor=blue,
+	filecolor=magenta,      
+	urlcolor=cyan,
+	%pdftitle={Overleaf Example},
+	pdfpagemode=FullScreen,
+}
+\title{Search for associated production of Higgs boson with top and anti-top pair and search for top squark pair production in the final state with one light lepton and a hadronically decaying tau}
+\author{Saikat Karmakar}
+%\date{February 2014}
+%\newcommand{\PGn}{{\fontfamily{helvet}\selectfont \upnu}}
+%\newcommand{\PSGc}{\widetilde{{\fontfamily{qtm}\selectfont \upchi}}}
+%\newcommand{\PQb}{{\fontfamily{helvet}\selectfont b}}
+%\newcommand{\chip}{\PSGc_{\text{1}}^{+}}
+%\newcommand{\chim}{\PSGc_{\text{1}}^{-}}
+%\newcommand{\chiz}{\PSGc_{\text{1}}^{0}}
+%\newcommand{\staup}{\widetilde{\PGt}_{\text{1}}^{+}}
+%\newcommand{\staum}{\widetilde{\PGt}_{\text{1}}^{-}}
+%\newcommand{\snu}{\widetilde{\PGn}_{\PGt}}
+%\newcommand{\sTop}{\widetilde{\mathrm{t}}}
+%\newcommand{\sTopOne}{\widetilde{\mathrm{t}}_{\text{1}}}
+\newcommand{\pt}{\ensuremath{p_{\mathrm{T}}}\xspace}
+\newcommand{\ptmiss}{\ensuremath{\pt^\text{miss}}}
+\newcommand{\mT}{\ensuremath{m_{\mathrm{T}}}\xspace}
+\newcommand{\ptvec}{\ensuremath{{\vec p}_{\mathrm{T}}}\xspace}
+\newcommand{\ptvecmiss}{\ensuremath{{\vec p}_{\mathrm{T}}^{\kern1pt\text{miss}}}\xspace}
+\newcommand{\mTii}{\ensuremath{m_{\mathrm{T2}}}\xspace}
+\newcommand{\ST}{\ensuremath{S_{\mathrm{T}}}\xspace}
+\newcommand{\ET}{\ensuremath{E_{\mathrm{T}}}\xspace}
+\newcommand{\mf}{\ensuremath{m_{\mathrm{f}}}}
+\newcommand{\yt}{\ensuremath{y_{\mathrm{t}}}}
+\newcommand{\DR}{\Delta\text{R}}
+\newcommand{\GeV}{\ensuremath{\text{Ge\hspace{-.08em}V}}{}\xspace}
+%\DeclareRobustCommand{\PZGc}{{\HepParticle{\PZ}{\upchi}{}}\Xspace}
+\DeclareRobustCommand{\PW}{{\HepParticle{W}{}{}}\xspace}
+\DeclareRobustCommand{\PH}{{\HepParticle{H}{}{}}\xspace}
+\DeclareRobustCommand{\PZ}{{\HepParticle{Z}{}{}}\xspace}
+\DeclareRobustCommand{\PQq}{\HepParticle{q}{}{}} % quark (generic)
+\DeclareRobustCommand{\PQd}{{\HepParticle{d}{}{}}\xspace} % down quark
+\DeclareRobustCommand{\PQu}{{\HepParticle{u}{}{}}\xspace} % up quark
+\DeclareRobustCommand{\PQs}{{\HepParticle{s}{}{}}\xspace} % strange quark
+\DeclareRobustCommand{\PQc}{{\HepParticle{c}{}{}}\xspace} % charm quark
+\DeclareRobustCommand{\PQb}{{\HepParticle{b}{}{}}\xspace} % bottom quark
+\DeclareRobustCommand{\PQt}{\HepParticle{t}{}{}} % top quark
+\DeclareRobustCommand{\PQbpr}{{\HepParticle{\PQb}{}{\prime}}\xspace} % bottom prime quark
+\DeclareRobustCommand{\PQtpr}{{\HepParticle{\PQt}{}{\prime}}\xspace} % top prime quark
+
+\DeclareRobustCommand{\PAQq}{{\HepAntiParticle{\PQq}{}{}}\xspace} % anti-quark (generic)
+\DeclareRobustCommand{\PAQd}{{\HepAntiParticle{\PQd}{}{}}\xspace} % down anti-quark
+\DeclareRobustCommand{\PAQu}{{\HepAntiParticle{\PQu}{}{}}\xspace} % up anti-quark
+\DeclareRobustCommand{\PAQs}{{\HepAntiParticle{\PQs}{}{}}\xspace} % strange anti-quark
+\DeclareRobustCommand{\PAQc}{{\HepAntiParticle{\PQc}{}{}}\xspace} % charm anti-quark
+\DeclareRobustCommand{\PAQb}{{\HepAntiParticle{\PQb}{}{}}\xspace} % bottom anti-quark
+\DeclareRobustCommand{\PAQt}{{\HepAntiParticle{\PQt}{}{}}\xspace} % top anti-quark
+\DeclareRobustCommand{\PAQbpr}{{\HepAntiParticle{\PQb}{}{\prime}}\xspace} % bottom prime anti-quark
+\DeclareRobustCommand{\PAQtpr}{{\HepAntiParticle{\PQt}{}{\prime}}\xspace} % top prime anti-quark
+
+\DeclareRobustCommand{\Pe}{{\HepParticle{e}{}{}}\xspace} % electron
+\DeclareRobustCommand{\Pepm}{{\HepParticle{\Pe}{}{\pm}}\xspace} % e plus/minus
+\DeclareRobustCommand{\Pemp}{{\HepParticle{\Pe}{}{\mp}}\xspace} % e minus/plus
+\DeclareRobustCommand{\Pem}{{\HepParticle{\Pe}{}{-}}\xspace} % electron
+\DeclareRobustCommand{\Pep}{{\HepParticle{\Pe}{}{+}}\xspace} % positron
+
+\DeclareRobustCommand{\PGm}{{\HepParticle{\upmu}{}{}}\xspace} % muon
+\DeclareRobustCommand{\PGmpm}{{\HepParticle{\PGm}{}{\pm}}\xspace} % mu plus/minus
+\DeclareRobustCommand{\PGmm}{{\HepParticle{\PGm}{}{-}}\xspace} % muon
+\DeclareRobustCommand{\PGmp}{{\HepParticle{\PGm}{}{+}}\xspace} % anti-muon
+
+\DeclareRobustCommand{\PGt}{{\HepParticle{\uptau}{}{}}\xspace} % tau
+\DeclareRobustCommand{\PGtpm}{{\HepParticle{\PGt}{}{\pm}}\xspace} % tau plus/minus
+\DeclareRobustCommand{\PGtm}{{\HepParticle{\PGt}{}{-}}\xspace} % tau lepton
+\DeclareRobustCommand{\PGtp}{{\HepParticle{\PGt}{}{+}}\xspace} % anti-tau
+\DeclareRobustCommand{\PAGt}{\HepAntiParticle{\PGt}{}{}\xspace} % generic anti-tau
+
+\DeclareRobustCommand{\PGn}{{\HepParticle{\upnu}{}{}}\xspace} % neutrino
+\DeclareRobustCommand{\PGne}{{\HepParticle{\PGn}{\!\Pe}{}}\xspace} % electron neutrino
+\DeclareRobustCommand{\PGnGm}{{\HepParticle{\PGn}{\!\PGm}{}}\xspace} % muon neutrino
+\DeclareRobustCommand{\PGnGt}{{\HepParticle{\PGn}{\!\PGt}{}}\xspace} % tau neutrino
+
+\DeclareRobustCommand{\PSQt}{{\HepSusyParticle{\PQt}{}{}}\xspace} % top squark (stop)
+\DeclareRobustCommand{\PSQtL}{{\HepSusyParticle{\PQt}{L}{}}\xspace}
+\DeclareRobustCommand{\PSQtR}{{\HepSusyParticle{\PQt}{R}{}}\xspace}
+\DeclareRobustCommand{\PSQtDo}{{\HepSusyParticle{\PQt}{1}{}}\xspace}
+\DeclareRobustCommand{\PSQtDt}{{\HepSusyParticle{\PQt}{2}{}}\xspace}
+\DeclareRobustCommand{\PASQt}{{\HepSusyAntiParticle{\PQt}{}{}}\xspace} % anti-top squark (stop)
+\DeclareRobustCommand{\PASQtL}{{\HepSusyAntiParticle{\PQt}{L}{}}\xspace}
+\DeclareRobustCommand{\PASQtR}{{\HepSusyAntiParticle{\PQt}{R}{}}\xspace}
+\DeclareRobustCommand{\PASQtDo}{{\HepSusyAntiParticle{\PQt}{1}{}}\xspace}
+\DeclareRobustCommand{\PASQtDt}{{\HepSusyAntiParticle{\PQt}{2}{}}\xspace}
+
+\DeclareRobustCommand{\PSGt}{{\HepSusyParticle{\PGt}{}{}}\xspace} % stau
+\DeclareRobustCommand{\PSGtmDo}{{\HepSusyParticle{\PGt}{1}{-}}\xspace} % stau
+\DeclareRobustCommand{\PSGtmDt}{{\HepSusyParticle{\PGt}{2}{-}}\xspace} % stau
+\DeclareRobustCommand{\PSGtpDo}{{\HepSusyParticle{\PGt}{1}{+}}\xspace} % stau
+\DeclareRobustCommand{\PSGtpDt}{{\HepSusyParticle{\PGt}{2}{+}}\xspace} % stau
+\DeclareRobustCommand{\PSGtL}{{\HepSusyParticle{\PGt}{L}{}}\xspace} % stau
+\DeclareRobustCommand{\PSGtR}{{\HepSusyParticle{\PGt}{R}{}}\xspace} % stau
+\DeclareRobustCommand{\PSGtDo}{{\HepSusyParticle{\PGt}{1}{}}\xspace} % stau
+\DeclareRobustCommand{\PSGtDt}{{\HepSusyParticle{\PGt}{2}{}}\xspace} % stau
+\DeclareRobustCommand{\PSGnGt}{{\HepSusyParticle{\PGn}{{\PGt}}{}}\xspace} % tau sneutrino
+\DeclareRobustCommand{\PSGnGtDo}{{\HepSusyParticle{\PGn}{{\PGt}1}{}}\xspace}
+\DeclareRobustCommand{\PSGnGtDt}{{\HepSusyParticle{\PGn}{{\PGt}2}{}}\xspace}
+
+\DeclareRobustCommand{\PSGc}{{\HepSusyParticle{\upchi}{}{}}\xspace} % chargino/neutralino
+\DeclareRobustCommand{\PSGcz}{{\HepParticle{\PSGc}{}{0}}\xspace} % neutralino
+\DeclareRobustCommand{\PSGczDo}{{\HepParticle{\PSGc}{1}{0}}\xspace}
+\DeclareRobustCommand{\PSGczDt}{{\HepParticle{\PSGc}{2}{0}}\xspace}
+\DeclareRobustCommand{\PSGczDT}{{\HepParticle{\PSGc}{3}{0}}\xspace}
+\DeclareRobustCommand{\PSGczDf}{{\HepParticle{\PSGc}{4}{0}}\xspace}
+\DeclareRobustCommand{\PSGcm}{{\HepParticle{\PSGc}{}{-}}\xspace} % chargino -
+\DeclareRobustCommand{\PSGcp}{{\HepParticle{\PSGc}{}{+}}\xspace} % chargino +
+\DeclareRobustCommand{\PSGcpm}{{\HepParticle{\PSGc}{}{\pm}}\xspace} % chargino
+\DeclareRobustCommand{\PSGcmDo}{{\HepParticle{\PSGc}{1}{-}}\xspace}
+\DeclareRobustCommand{\PSGcpDo}{{\HepParticle{\PSGc}{1}{+}}\xspace}
+\DeclareRobustCommand{\PSGcpmDo}{{\HepParticle{\PSGc}{1}{\pm}}\xspace}
+\DeclareRobustCommand{\PSGcmDt}{{\HepParticle{\PSGc}{2}{-}}\xspace}
+\DeclareRobustCommand{\PSGcpDt}{{\HepParticle{\PSGc}{2}{+}}\xspace}
+\DeclareRobustCommand{\PSGcpmDt}{{\HepParticle{\PSGc}{2}{\pm}}\xspace}
+
+\newcommand{\ttbar}{\PQt{}\PAQt} % t-tbar
+\newcommand{\tauh}{\ensuremath{\PGt_\mathrm{h}}\xspace}
+\newcommand{\ttH}{\ttbar\PH}
+\newcommand{\CLs}{\ensuremath{\text{CL}_\text{s}}\xspace}
+\newcommand{\CL}{\ensuremath{\text{CL}}\xspace}
+%\input{ptdr-def.tex}
+\begin{document}
+
+\begin{titlepage}
+\maketitle
+\end{titlepage}
+
+\section{Introduction}\label{intro}
+The Compact Muon Solenoid (CMS) detector\cite{CMS:2008xjf} of the Large Hadron Collider (LHC) has successfully finished acquiring high quality data from proton-proton collision in 2018. After the discovery of Higgs by the CMS and ATLAS experiment in 2012  \cite{CMS:2012qbp,ATLAS:2012yve}, now it is time to measure all of it's properties to prove that it is indeed the standard model (SM) Higgs. Despite the tremendous success of SM, several important problems such as dark matter, Higgs mass stability etc. indicates that SM is not the complete description of nature. So it is also equally important to look for physics beyond SM.\\
+Currently the mass of the discovered particle is measured with $< 2\%$ accuracy ($m_{\text{\PH}} = 125.78 \pm 0.26$ \GeV \cite{CMS:2020xrn}) by a combined analysis of data recorded by the CMS and ATLAS experiments during LHC Run 1. Results from Run 1 also indicate that the couplings of the \PH boson to the \PW and \PZ bosons are SM-like \cite{CMS:2014fzn}. However, \PH to fermion couplings have only been constrained with large uncertainty. In the SM, the Yukawa coupling $\yt$ of the \PH boson to the fermions is proportional to the fermion mass $\mf$  and is given by $\yt=\sqrt{2}\mf/v$, where $v\approx 246$ \GeV is the vacuum expectation value of the Higgs field. With a mass $m_{\text{t}}=173.34\pm 0.76$ \GeV\cite{ATLAS:2014wva}, the top quark is the heaviest fermion known till date, and its Yukawa coupling $\yt$ is of the order one. The large mass of the top quark may indicate that it plays a special role in the mechanism of electroweak symmetry breaking\cite{Dobrescu:1997nm,Chivukula:1998wd,Delepine:1995qs}. Deviations of $\yt$ from the SM prediction would unambiguously indicate the presence of new physics beyond the SM, and thus the determination of $\yt$ is of special interest in the study of the Higgs boson. We have carried out a search for associated production of Higgs boson with a top and anti-top pair in one lepton (electron or muon) and one hadronically decaying $\PGt$ final state whose details and results are presented in Section \ref{ttH}.\\
+Till now all the properties of the Higgs boson discovered at the LHC follows the SM predictions. However, SM can not explain the large corrections to the Higgs mass due to top quark loops. Supersymmetry (SUSY), which predicts a bosonic (fermionic) partner of each SM fermion (boson) can provide a solution of the Higgs mass stability by introducing a superpartner of the top quark, the top squark ($\PSQt$). Moreover, the superpartners of SM Higgs and the gauge bosons (higgsinos and gauginos) and mix to give produce neutralinos and charginos. The lightest neutralino can be a dark matter candidate in the R-parity conserving SUSY scenarios\cite{FARRAR1978575}. These are some of the reasons that SUSY is one of the most widely studied Beyond Standard Model (BSM) theories. Several SUSY search in multi lepton and multi jet final states are carried out by both CMS and ATLAS experiment. But these final states are not sensitive for the SUSY scenario when $\mathrm{tan\beta}$ is high, or the chargino and neutralino becomes higgsino like. Because in these scenarios, the third generation slepton-lepton couplings are enhanced, leading to a final state with tau lepton. We have carried out a top squark pair production search with tau leptons in the cascade decay of the top squarks, where one tau decays leptonically and other tau decays hadronically, whose details and results are presented in Section \ref{stop_search}.
+
+
+\section{Search for assocoated production of Higgs with a top and anti-top pair in one lepton and one hadronically decaying final state} \label{ttH}
+
+The value of $\yt$ can be obtained from the decay rate of the \PH boson to photon pairs\cite{Biswas:2013xva} and also from the rate of the associated production of a \PH boson with a Z boson\cite{Hespel:2015zea}. The measured rates of these processes suggest that the \PH boson coupling to top quarks is SM-like. However, contributions of non-SM particles to these loops may compensate, and thus mask, deviations of $\yt$ from its SM value. A model independent direct measurement of the top quark Yukawa coupling in $\ttH$ productions is thus well motivated. The comparison of the magnitude $\yt$ obtained from the measurement of the $\ttH$ production rates,
+where $\yt$ enters at tree level, with the value of $\yt$ obtained from processes where $\yt$ enters via loop contributions will provide complimentary evidence either for or against such new physics phenomena.
+
+\subsection{The signal process}
+\begin{figure}[!htb]
+	\centering
+	\includegraphics[width=0.9\textwidth]{Fig/ttH_signal.png}
+	\caption{Representative Feynman diagrams for the $\ttH$ production processes.}
+	\label{ttH_feynman}
+\end{figure}
+The leading order (LO) Feynman diagrams for \PH boson production in association with a pair
+top quarks ($\ttH$) is shown in Fig.\ref{ttH_feynman}. 
+
+
+\subsection{Event selection}
+The $1\ell + 1\tauh$ category targets $\ttH$ signal events in which the two top quarks decay hadron-
+ically and the \PH boson decays into two $\PGt$, one of which decays hadronically while the other
+one decays leptonically. Events selected in this category must contain one electron or muon
+passing the tight object selection criteria and one $\tauh$ passing fakeable selection criteria and the medium WP of the $\tauh$ identification discriminant. The lepton is required to be within the geometric acceptance of the lepton+$\tauh$ cross-trigger, i.e. $|\eta| < 2.1$, and to have $\pt > 30$ \GeV ($ > 25$ \GeV) if it is an electron (muon). We further require that the $\tauh$ satisfies the condition $\pt > 30$ \GeV and that the event contains at least four jets with $\pt > 25$ \GeV and $|\eta| < 2.4$, among which at least two pass the loose WP of the \PQb-tagging discriminator or at least one passes the medium WP. Events with more than one electron or muon passing the tight object selection criteria or more than one loose $\tauh$ passing the medium WP of the $\tauh$ identification discriminant are vetoed to avoid overlap with the other categories.
+
+
+\subsection{Background estimation}
+Several background processes are taken into consideration in this analysis. Each background is categorised as either “reducible” or “irreducible” according to the source of the reconstructed and selected leptons. For all processes, a lepton is considered prompt if it originated from the decay of either a \PW boson, a \PZ boson or a $\PGt$ lepton. A background is considered reducible if one or more of the reconstructed electrons, muons or $\tauh$ leptons passing the object selection criteria does not originate from a prompt electron, muon or $\tauh$. The main ``irreducible'' background contribution comes from $\ttbar$. Apart from that other contributing processes are DY+jets, $\ttbar\PZ$, $\ttbar\PW$, $\PW\PZ$, $\PZ\PZ$ and some other rare processes. All the ``irreducible'' backgrounds are estimated from monte-carlo simulation.\\
+The main source of ``reducible'' background is from the events where a jet is mis-identified as a lepton or $\tauh$, which is also called ``Fake'' background. This background is estimated in a data deiven way which is described in the section \ref{fake_bkg}.
+
+\subsubsection{Estimation of the “Fake” background}\label{fake_bkg}
+The background from misidentified leptons and $\tauh$ is estimated using the misidentification
+probability (MP) method \cite{CMS:2018fdh}. The method is based on selecting a sample of events satisfying all selection criteria of the SR, except that the electrons, muons, and $\tauh$ used to construct the signal regions are required to pass relaxed selections instead of the nominal ones. We refer to this sample of events as the application region (AR) of the MP method.
+Events in which all leptons and $\tauh$ satisfy the nominal selections are vetoed, to avoid overlap with the SR. An estimate of the background from misidentified leptons and $\tauh$ in the SR is obtained by applying suitably chosen weights to the events selected in the AR. The weights, denoted by the symbol $w$, are given by the expression:
+\begin{equation}
+	w = (-1)^{n+1}\prod_{i=1}^{n}\frac{f_{i}}{1-f_{i}}
+\end{equation}
+where the product extends over all electrons, muons, and $\tauh$ that pass the relaxed, but fail the nominal selection criteria, and n refers to the total number of such leptons and $\tauh$. The symbol $f_{i}$ denotes the probability for an electron, muon, or $\tauh$ passing the relaxed selection to also satisfy the nominal one. The contributions of irreducible backgrounds to the AR are subtracted based on the MC expectation of such contributions.\\
+The probabilities $f_{i}$ for leptons are measured in multijet events, separately for electrons and muons, and are binned in $\pt$ and $\eta$ of the lepton candidate. The measurement is based on
+selecting events containing exactly one electron or muon that passes the relaxed selection and
+at least one jet separated from the lepton by $\DR > 0.7$. Selected events are then subdivided into “pass” and “fail” samples, depending on whether the lepton candidate passes the nominal selection or not. The fail sample is dominated by the contribution of multijet events. The
+contributions of other processes, predominantly arising from $\PW$+jets, DY, diboson, and $\ttbar$+jets
+production, are subtracted based on MC estimates of these contributions.\\
+The $f_{i}$ for $\tauh$ are determined as a function of $\pt$ and $\eta$ of the $\tauh$ candidate in a region enriched in $\ttbar$ +jets events containing a reconstructed opposite-sign electron-muon pair and at least two loose \PQb-tagged jets in addition to the $\tauh$ candidate. Contributions of genuine $\tauh$ are modeled using the MC simulation and subtracted.
+
+
+\subsection{Search strategy}
+In the $1\ell+1\tauh$ category a single BDT is trained to separate the $\ttH$ signal from the sum
+of the backgrounds. The background processes used for training are $\ttbar\PW$, $\ttbar\PZ$, $\ttbar$ and Drell-Yan. The BDTs take input variables related to the object multiplicities, the jet \PQb-tagging score, the flavor of the leptons, some basic kinematic properties of the objects, geometrical relations between the objects, the Hadronic Top Tagger score and other global variables. the jets that have not entered the computation of the hadronic top are used to reconstruct a second hadronic top, which also enters as input to the BDTs in these categories. In the same categories we also make use of the SVFit mass of the leading $\ell+\tauh$   collection pair, as introduced by the $gg\to\PH\to\PGt\PGt$ analysis \cite{CMS:2014wdm}.\\
+The choice of variables has been optimized according to their relative importance in terms of signal/background discriminating power. This variable ranking can be found in Fig. \ref{var_rank} (left). The choice of the hyperparameters used in the training has been done evaluating the ROC curves and the expected limits. The ROC curves showing the separation of the $\ttH$ process from the rest of backgrounds can be found in Fig. \ref{var_rank} (right). In these same figures information on the choice of hyperparameters can be found.
+\begin{figure}[!htb]
+	\includegraphics[width=0.45\textwidth]{Fig/var_rank.png}
+	\includegraphics[width=0.45\textwidth]{Fig/roc.png}
+	\caption{BDT Variable rankings (left) and ROC curve (right) for $1\ell+1\tauh$ category}
+	\label{var_rank}
+\end{figure}
+
+\subsection{Systematic uncertainty}
+
+
+
+\section{Search for top squark pair production in a final state with two tau leptons in proton-proton collisions at $\sqrt{s} = 13$ TeV}\label{stop_search}
+\subsection{The signal process}
+We focus on the top squark decays
+$\PSQtDo \to \PQb \PSGcpDo \to \PQb \PSGtpDo \PGnGt \to  \PQb \PGtp \PSGczDo \PGnGt$
+ ~and~
+$\PSQtDo \to \PQb \PSGcpDo \to \PQb \PGtp \PSGnGt \to \PQb \PGtp \PSGczDo \PGnGt$.
+The \PSGczDo is assumed to be the lightest SUSY particle (LSP). Being neutral and weakly interacting, it leaves no signature in the detector, resulting in an imbalance in transverse momentum \pt. The neutrinos produced in the decay chains also contribute to the \pt imbalance.
+Hence, the events of interest contain two tau leptons, two {\PQb} quarks, and a \pt imbalance.
+The decay chains are depicted by the four diagrams in Fig.~\ref{fig:sigFeyn} within the simplified model spectra (SMS) framework~\cite{Alwall:2008ag, Alves:2011wf}. It is assumed that the $\PSGcpDo$ decays to \PSGtpDo or \PSGnGt with equal probability. So each diagram contribute 25\% to the signal process. The masses of SUSY particles appearing in the decay chain are
+determined by the parameterization
+\begin{equation}
+	\begin{aligned}
+	m_{\PSGcmDo} - m_{\PSGczDo} &= 0.5 \
+	(m_{\PSQtDo} - m_{\PSGczDo} ) ,
+	\\
+	m_{\PSGt_{1}} - m_{\PSGczDo} &= x \
+	(m_{\PSGcmDo} - m_{\PSGczDo} ) ,
+	\\
+	x &\in [0.25,\ 0.5,\ 0.75] ,
+	\\
+	m_{\PSGnGt} & = m_{\PSGt_{1}} .
+	\end{aligned}
+	\label{eq:mass}
+\end{equation}
+
+\begin{figure}[!htbp]
+	\centering
+	
+	\includegraphics[width=0.45\textwidth]{Fig/Figure_001-a.pdf}
+	\includegraphics[width=0.45\textwidth]{Fig/Figure_001-b.pdf} \\
+	\includegraphics[width=0.45\textwidth]{Fig/Figure_001-c.pdf}
+	\includegraphics[width=0.45\textwidth]{Fig/Figure_001-d.pdf}
+	
+	%\setcounter{figure}
+	\caption{Top squark pair production in proton-proton collisions at the LHC, producing pairs of \PQb quarks and taus accompanied by neutrinos and LSPs in the final state.
+	}
+	\label{fig:sigFeyn}
+\end{figure}
+The search is already performed in di-\tauh final state \cite{CMS:2019lrh} with 2016 and 2017 data combined. In this analysis main focus is given to the semileptonic categories where one \PGt decays hadronically and other leptonically. The probability of decaying two \PGt hadronically is $\approx 42\%$. But if we consider the scenario where one \PGt decays hadronically and other leptonically, then that probability is also $\approx 40\%$. So one expect similar signal yieds as that of di-\tauh final state. This is the motivation for probing the semileptonic channels as well.
+
+\subsection{Search variables}
+The signal event consists of one hard \tauh jets, one lepton ($\PGm$ or \Pe), hard missing transverse energy, and at least one \PQb-tagged jet. The major sources of missing energy is from the weakly interacting neutralino (which can be massive), unlike the SM backgrounds. The missing energy is correlated with the visible objects, in particular the \tauh jets and leptons ($\PGm$ or \Pe). Consequently in the signal events, the correlation between visible and invisible parts is expected to be different in comparison to the SM background processes. This feature of the correlation can be exploited through the construction of a variable called the transverse mass, which is defined as.
+\begin{equation}
+\mT^{2}(\ptvec^{~\text{vis}},\ptvec^{~\text{inv}}) = m_{\text{vis}}^{2}+m_{\text{inv}}^{2}+2(\ET^{\text{vis}}\ET^{\text{inv}}-\ptvec^{\text{~vis}}.\ptvec^{\text{~inv}})
+\label{eqn:mT}
+\end{equation}
+
+Generally, this variable carries information about the mass of parent of the visible (vis) and the invisible (inv) particles. However, since there are multiple sources of missing momentum in the signal process, the appropriate variable which can render the parent particle masses is the ``stransverse mass'' \cite{Lester:1999tx, Barr:2003rg, Barr:2009wu}, which is defined in Equation \ref{eqn:mt2}.
+\begin{equation}
+\mTii(\text{vis1, vis2, MET}) = \min_{\ptvec^{~\text{inv1}}+\ptvec^{~\text{inv2}}=\ptvecmiss}[\max\{\mT(\ptvec^{~\text{vis1}},\ptvec^{~\text{inv1}}), \mT(\ptvec^{~\text{vis2}},\ptvec^{~\text{inv2}})\}]
+\label{eqn:mt2}
+\end{equation}
+In Equation \ref{eqn:mt2}, since the momenta of the individual invisible particles is not known, the missing energy(\ptmiss) is divided into two components ($\ptvec^{~\text{inv1}}$ and $\ptvec^{~\text{inv2}}$) in such a way that the value of $\mTii$ is minimum. In our case $\mTii$ is computed using the \tauh and $\PGm/\Pe$ and \ptmiss. Then its upper limit in our signal will be at the chargino mass. This is different from the SM background processes. For example, in \ttbar events the upper limit is at the W boson mass. Since this a search, when calculating $\mTii$ for the signal, the mass of the invisible particle in equation \ref{eqn:mt2} is set to zero as the neutralino mass is not known.\\
+\\
+In addition, we construct another variable $\ST$, sum of the visible momenta of the final state particles,(equation \ref{eqn:sT}).
+\begin{equation}
+\ST= \pt^{\PGm}+\pt^{\tauh}+\sum_{jets}\pt
+\label{eqn:sT}
+\end{equation}
+So finally we consider three search variables:
+\begin{itemize}
+	\item \ptmiss: Sensitive to the kinematics of the $\nu$ and \PSGczDo.
+	\item $\mTii$: Sensitive to \PSGcpmDo.
+	\item $\ST$: Sensitive to to the total mass of the system $(m_{\PSQtDo})$.
+\end{itemize}
+
+
+
+\subsubsection{Search Region}
+Signal events with different top squark and LSP masses populate different regions of the phase space. For example, regions with low $\ptmiss$, $\mTii$ , and $\ST$ are sensitive to signals with low top squark masses. On the other hand, events with high $\ptmiss$, $\mTii$ , and $\ST$ are sensitive to models with high top squark and low LSP masses. In order to obtain the highest sensitivity over the entire phase space, the signal region (SR) is divided into several bins as a function of the measured $\ptmiss$, $\mTii$ , and $\ST$. The optimization of bins are performed by comparing the distributions of the variables between backgrounds and signals of different mass points, which can be seen in \ref{fig:compare_shape}. Closely examining the sensitivities of the search variables, we initially divided the entire phase space into 15 bins. The bins are shown in Figure \ref{fig:SR_Bins}. 
+
+\begin{figure}[htb!]
+	\includegraphics[width=0.32\textwidth]{Fig/met.pdf}
+	\includegraphics[width=0.32\textwidth]{Fig/ht.pdf}
+	%\begin{center}
+		\includegraphics[width=0.32\textwidth]{Fig/mt2.pdf}
+	%\end{center}
+	\caption{Shape comparison of the search variables between signal and backgrounds.}
+	\label{fig:compare_shape}
+\end{figure}
+\begin{figure}[htb!]
+	\begin{center}
+		\includegraphics[width=0.8\textwidth]{Fig/sig_binning.pdf}
+	\end{center}
+	\caption{Search Bins}
+	\label{fig:SR_Bins}
+\end{figure}
+
+\subsection{Signal region event selectrion}
+Signal events are selcted using single muon (single electeron) trigger for $\PGm\tauh$ ($\Pe\tauh$) channels. For offline selection we must have \ptmiss$>50$ \GeV and \ST$>100$ \GeV. For $\PGm\tauh$ ($\Pe\tauh$) category the events should have exactly one \PGm(\Pe) with \pt$>28$ (\pt$>30$ (2016) and \pt$>36$ (2017,2018)) \GeV, $|\eta|<2.4$ ($|\eta|<2.1$) and exactly one \tauh with \pt$>30$ \GeV, $|\eta|<2.3$ and the muon (electron) and \tauh should be of opposite sign. Events with any extra lepton with \pt$>15$ \GeV and $|\eta|<2.4$ are vetoed to remove the overlap between different categories. The Data-MC comparison for \ptmiss, \ST and \mTii are shown in the Fig. \ref{fig:data_mc_comp}.
+\begin{figure}[htb!]
+	\includegraphics[width=0.33\textwidth]{Fig/Ht_1E1Tau_FullRun2.pdf}
+	\includegraphics[width=0.33\textwidth]{Fig/Met_1E1Tau_FullRun2.pdf}
+	\includegraphics[width=0.33\textwidth]{Fig/Mt2_1E1Tau_FullRun2.pdf}\\
+
+	\includegraphics[width=0.33\textwidth]{Fig/Ht_1Mu1Tau_FullRun2.pdf}
+	\includegraphics[width=0.33\textwidth]{Fig/Met_1Mu1Tau_FullRun2.pdf}
+	\includegraphics[width=0.33\textwidth]{Fig/Mt2_1Mu1Tau_FullRun2.pdf}\\
+	\caption{
+		Distributions of the search variables \ptmiss, \mTii,
+		and \ST after event selection, for data and the predicted background, corresponding to the $\Pe\tauh$ category(upper row) and $\PGm\tauh$ category(lower row).
+		The histograms for the background processes are stacked, and the distributions for a few representative signal points corresponding to $ x = 0.5 $ and [$ m_{\PSQtDo} $, $ m_{\PSGczDo} $] = [300, 100], [500, 350], [800, 300], and [1000, 1]\GeV are overlaid.
+		The lower panel indicates the ratio of the observed data to the background prediction.
+		The shaded bands indicate the statistical and systematic uncertainties on the background, added in quadrature. The overflow events are included in the last bin.
+	}
+	\label{fig:data_mc_comp}
+\end{figure}
+
+\section{Background estimation}
+In the sensitive bins the greatest (prompt) contribution is from $\ttbar$ and $\PQt\PW$, which is expected because of its large cross section and it's event topology, which is very similar to our signal. For $\ttbar$, and $\PQt\PW$ scale-factors are derived in a data driven way from a $\ttbar$ and $\PQt\PW$ enriched control region to correct for the background modelling uncertainty. Details are discussed in section \ref{ttbar_SF}.\\
+The other major background contribution in the sensitive bins is from fakes (mostly from hadronic and semi-leptonic $\ttbar$ events). We predict the fake background using a data-driven method discussed in section \ref{fakeBkg_est}.\\
+The DY background is estimated from MC with \PZ-$\pt$ reweighting applied. The other background ($\PW$+jets, VV, V\PH, TTX, etc.) estimation are derived from MC, with the recommended corrections/scale-factors (SF) applied.
+
+\subsection{Tau lepton pairs from top production}\label{ttbar_SF}
+The estimation of the background from single top ($\PQt\PW$) and \ttbar events in which there are two genuine \tauh decays (or one genuine \tauh decay and a genuine lepton) is based on the method described in Refs.~\cite{CMS:2019lrh, Sirunyan:2645851}. The predicted yields in each SR bin from simulation are multiplied by correction factors derived in a CR enriched in \ttbar and single top events (collectively called a top-enriched CR). This CR is identified by selecting events with an oppositely charged $\Pe\PGm$ pair. The selection criteria are similar to that of SR selections with \tauh replaced by an electron or a muon. The overall purity of $\ttbar+\PQt\PW$ events is $\geq90\%$. For a given SR region $(i)$ we define:\\
+\begin{equation}
+	SF_{i}=\frac{N_{\text{CR},i}^{\text{Data}}}{N_{\text{CR},i}^{\text{all~MC}}}
+	\label{eqn:sf}
+\end{equation}
+where the numerator is the events selected in data and the denominator is the total expected events in the $i$th SR. The corrected \ttbar yield in simulation in each region of the SR is then obtained as:
+\begin{equation}
+SR_{i}^{\text{corr}~\ttbar}=SR_{i}^{\ttbar~\text{MC}}\times SF_{i} = SR_{i}^{\ttbar~\text{MC}}\times\frac{N_{\text{CR},i}^{\text{Data}}}{N_{\text{CR},i}^{\text{all~MC}}}
+\end{equation}
+The SFs are of the order 10\% in the most of the bins.
+
+\subsection{Misidentified hadronically decaying tau lepton candidates}\label{fakeBkg_est}
+In the $\Pe\tauh$ and $\PGm\tauh$ categories, a major background contribution arises from semileptonic single top and \ttbar events where there is a genuine electron or muon, and a jet is misidentified as $\tauh$.
+This background is estimated by selecting a sideband region (SbR) where all the signal region selections are applied, except that the $\tauh$ candidate is required to pass the very loose (VL) WP but fail the tight (T) identification criteria; this identification requirement is indicated as ``VL \&\& !T'' in the following discussion.
+The yields from this sideband region are extrapolated to obtain the contribution from misidentified \tauh candidates to the $\ell\tauh$ signal region.
+The extrapolation factor is determined in a CR~\cite{CMS:2019eln} enriched in {\PW}+jets events containing a misidentified \tauh candidate.
+This CR is extracted from data by requiring exactly one \PGm and exactly one $\tauh$, $\ptmiss\ge50$ \GeV and $60<\mT<130$ \GeV, where \mT is the transverse mass computed using \ptvecmiss and the momentum of the \PGm.
+Events with any \PQb-tagged jet passing the loose WP are vetoed to make this CR orthogonal to the signal region.
+The fraction of {\PW}+jets events in this CR is calculated to be $\approx83\%$ from simulation.
+The remaining contribution from non {\PW}+jets events is estimated from simulation and subtracted from the data.
+%and non W+jets contributions are subtracted using monte carlo.
+The extrapolation factor ($R$) is defined in this CR as,
+%\begin{linenomath}
+	\begin{equation}
+	R =
+	\frac{N_\text{data}^\text{CR} (\tauh^{\text{T}}) - N_\text{non {\PW}+jets MC}^\text{CR} (\tauh^{\text{T}})}
+	{N_\text{data}^\text{CR} (\tauh^{\text{VL \&\& !T}})-N_\text{non {\PW}+jets MC}^{\text{CR}}(\tauh^{\text{VL \&\& !T}})} .
+	\label{eq:transferFactor}
+	\end{equation}
+%\end{linenomath}
+Here $N_{\text{data}}^{\text{CR}}$ is the number of events in the {\PW}+jets CR obtained from data, and $N_\text{MC, non {\PW}+jets}^\text{CR}$ is the number of simulated events (except {\PW}+jets) in the same CR.
+It is evident that $R$ facilitates the transfer from a region with misidentified \tauh candidates satisfying the ``VL \&\& !T'' requirement ($\tauh^{\text{VL \&\& !T}}$) to a region with misidentified \tauh candidates satisfying the ``T" requirement ($\tauh^{\text{VL \&\& !T}}$).
+The value of $R$ is calculated as a function of the \pt and $\eta$ of the \tauh candidate and is found to vary between 15-30\% with \pt and $\eta$.
+It is found using simulated {\PW}+jets events that $R$ varies by ${\approx}15\%$ percent depending on the flavour of the parton corresponding to the jet that is misidentified as a \tauh. Since the jet flavor cannot be reliably determined in data, an uncertainty of 15\% in $R$ is included.
+%The background coming from the misidentification of jets as $\tauh$ is determined in the SR from sideband as:
+The contribution from misidentified \tauh candidates to the $\ell\tauh$ signal region is then evaluated as,
+%\begin{linenomath}
+	\begin{equation}
+	N^{\text{misid, SR}} = R N^{\text{misid, SbR}} = R [N_{\text{data}}^{\text{SbR}} - N_{\text{MC, genuine \tauh}}^{\text{SbR}}],
+	\end{equation}
+%\end{linenomath}
+where $N_{\text{data}}^{\text{SbR}}$ is the number of events obtained in the sideband region from data, and $N_{\text{MC, genuine \tauh}}^{\text{SbR}}$ represents the contribution to the sideband region from simulated events where the $\tauh$ candidate is genuine.
+Thus, the number of sideband events with a misidentified \tauh candidate ($N^{\text{misid, SbR}}$) is obtained by subtracting $N_{\text{MC, genuine \tauh}}^{\text{SbR}}$ from $N_{\text{data}}^{\text{SbR}}$.
+Finally, $N^{\text{misid, SbR}}$ is multiplied by $R$ which extrapolates the yields from the sideband (where the \tauh candidate passes the ``VL \&\& !T'' requirement) to the signal (where the \tauh candidate passes the ``T'' requirement) region.
+
+\section{Systematics}
+Several systematic uncertainties are taken into account for the prediction of the final signal and backgrounds yields. Among them most prominant ones are uncertainty due to identification and isolation of \tauh (3.5\%) and uncertainty associated with \ttbar SFs (4.0\%). Apart from these two, other unceratinties that are considered are coming from jet energy scales (JEC), jet energy resolution (JER), \PQb-tagging, the effect of unclustered components in calculating \ptmiss, parton flavor dependence of the fake rates, trigger, \tauh energy scale. In addition, theoretical uncertainties are obtained by varying the factorization and renormalization scales.
+$\textsc{FastSim}\to\textsc{Geant4}$ corrections (for signal only). JER uncertainty, unceratinty coming from the flavor dependence of the fake rates and the uncertainty from the $\textsc{FastSim}$ \ptmiss resolution are assumed to be correlated accross the three years. Other uncertainties are taken to be uncorrelated accross the different years but assumed correlated accross different SR bins. The statistical uncertainties are also take into account and considered to be uncorrelated accross different SR bins. The tabulated sources of systematic uncertainties are modeled by log-normal distributions~\cite{CMS-NOTE-2011-005} in the likelihood function used for the statistical interpretation of the results. 
+
+\section{Results}
+The test statistic used for the interpretation of the result is the profile likelihood ratio $ q_{\mu} = -2 \ln{(\mathcal{L}_{\mu} / \mathcal{L}_{\text{max}})} $, where $ \mathcal{L}_{\mu} $ is the maximum likelihood for a fixed signal strength $ \mu $, and $ \mathcal{L}_{\text{max}} $ is the global maximum of the likelihood~\cite{CMS-NOTE-2011-005}. We set upper limits on signal production at 95\% \CL using a modified frequentist approach and the \CLs criterion~\cite{JUNK1999435, Read_2002}, implemented through an asymptotic approximation of the test statistic \cite{Cowan2011}. In this calculation all the background and signal uncertainties are modeled as nuisance parameters and profiled in the maximum likelihood fit. Final results are obtained by combining the yields from 2016, 2017 and 2018 data sets, in both $\Pe\tauh$ and $\PGm\tauh$ categories. The results are presented as observed and expected exclusion limits in the top squark and LSP mass plane in Fig.~\ref{fig:2Dlimit}.
+Top squark masses up to 1060 \GeV are excluded for a nearly massless LSP, and LSP masses up to 360 \GeV are excluded for a top squark mass of 850 \GeV. The limits become weaker with decreasing $ \Delta m = m_{\PSQtDo} - m_{\PSGczDo} $, corresponding to a parameter space with final-state particles having lower momentum and hence less sensitivity.
+\begin{figure}[!htbp]
+	\centering
+	%\includegraphics[width=0.495\textwidth]{exclusion2D_x0p25.pdf}
+	\includegraphics[width=0.495\textwidth]{Fig/exclusion2D_LTauFullRun2_x0p5.pdf} \\
+	%\includegraphics[width=0.495\textwidth]{exclusion2D_x0p75.pdf}
+	
+	\caption{
+		Exclusion limits at 95\% \CL for the pair production of top squarks decaying to $\ell\tauh$ ($\PGm\tauh+\Pe\tauh$) final states, displayed in the $ {m_{\PSQtDo}}$-$m_{\PSGczDo} $ for $x= 0.5$ as described in Eq.~(\ref{eq:mass}). The color axis represents the observed limit in the cross section, while the black (red) lines represent the observed (expected) mass limits. The signal cross sections are evaluated using NNLO plus next-to-leading logarithmic (NLL) calculations. The solid lines represent the central values. The dashed red lines indicate the region containing 68\% of the distribution of limits expected under the background-only hypothesis. The dashed black lines show the change in the observed limit due to variation of the signal cross sections within their theoretical uncertainties.
+	}
+	\label{fig:2Dlimit}
+\end{figure}
+
+\clearpage
+\bibliographystyle{utphys.bst}
+\bibliography{synopsis.bib}
+\end{document}
