@@ -29,17 +29,6 @@
 \title{Search for associated production of Higgs boson with top and anti-top pair and search for top squark pair production in the final state with one light lepton and a hadronically decaying tau}
 \author{Saikat Karmakar}
 %\date{February 2014}
-%\newcommand{\PGn}{{\fontfamily{helvet}\selectfont \upnu}}
-%\newcommand{\PSGc}{\widetilde{{\fontfamily{qtm}\selectfont \upchi}}}
-%\newcommand{\PQb}{{\fontfamily{helvet}\selectfont b}}
-%\newcommand{\chip}{\PSGc_{\text{1}}^{+}}
-%\newcommand{\chim}{\PSGc_{\text{1}}^{-}}
-%\newcommand{\chiz}{\PSGc_{\text{1}}^{0}}
-%\newcommand{\staup}{\widetilde{\PGt}_{\text{1}}^{+}}
-%\newcommand{\staum}{\widetilde{\PGt}_{\text{1}}^{-}}
-%\newcommand{\snu}{\widetilde{\PGn}_{\PGt}}
-%\newcommand{\sTop}{\widetilde{\mathrm{t}}}
-%\newcommand{\sTopOne}{\widetilde{\mathrm{t}}_{\text{1}}}
 \newcommand{\pt}{\ensuremath{p_{\mathrm{T}}}\xspace}
 \newcommand{\ptmiss}{\ensuremath{\pt^\text{miss}}}
 \newcommand{\mT}{\ensuremath{m_{\mathrm{T}}}\xspace}
@@ -137,12 +126,18 @@
 \DeclareRobustCommand{\PSGcmDt}{{\HepParticle{\PSGc}{2}{-}}\xspace}
 \DeclareRobustCommand{\PSGcpDt}{{\HepParticle{\PSGc}{2}{+}}\xspace}
 \DeclareRobustCommand{\PSGcpmDt}{{\HepParticle{\PSGc}{2}{\pm}}\xspace}
+\DeclareRobustCommand{\PSWpm}{{\HepSusyParticle{\PW}{}{\pm}}\xspace}
+\DeclareRobustCommand{\PSWz}{{\HepSusyParticle{\PW}{}{0}}\xspace}
+\DeclareRobustCommand{\PSBz}{{\HepSusyParticle{B}{}{0}}\xspace}
+\DeclareRobustCommand{\PSH}{{\HepSusyParticle{\PH}{}{}}\xspace}
 
 \newcommand{\ttbar}{\PQt{}\PAQt} % t-tbar
+\newcommand{\mh}{\ensuremath{m_{h}}}
 \newcommand{\tauh}{\ensuremath{\PGt_\mathrm{h}}\xspace}
 \newcommand{\ttH}{\ttbar\PH}
 \newcommand{\CLs}{\ensuremath{\text{CL}_\text{s}}\xspace}
 \newcommand{\CL}{\ensuremath{\text{CL}}\xspace}
+
 %\input{ptdr-def.tex}
 \begin{document}
 
@@ -215,7 +210,63 @@ The choice of variables has been optimized according to their relative importanc
 
 
 \section{Search for top squark pair production in a final state with two tau leptons in proton-proton collisions at $\sqrt{s} = 13$ TeV}\label{stop_search}
+
+\subsection{Supersymmetry}\label{SUSY}
+
+The standard model (SM) Higgs receives a correction to it's squared mass $\mh^{2}$ from a loop containing a Dirac fermion f with mass $\mf$. If the fermion f couples to the Higgs with a term in the lagrangian $-\lambda_{\text{f}}h\bar{\text{f}}\text{f}$, then the correction received is given by
+\begin{equation}
+	\Delta\mh^{2} = -\frac{\lambda_{\text{f}}}{8\pi}\Lambda_{\text{UV}}^{2}+...
+	\label{eq:mass_corr1}
+\end{equation} 
+Here $\Lambda_{\text{UV}}$ is the UV cut-off scale of the theory. So a huge correction comes from the heaviest fermion (the top quark) if $\Lambda_{\text{UV}}$ is large (either the Planck scale, or even $\sim$TeV which is the energy scale to which SM has been tested at colliders till date). One way to get rid of this quadratic divergence is to introduce a new term to the Higgs mass correction that cancels the divergence coming from the fermionic loop. This can be achieved by adding a new scalar to the theory that couples to the Higgs as $\zeta_{S}h^{2}S^{2}$. This introduces the following additional term in the Higgs squared mass correction:
+\begin{equation}
+	\Delta\mh^{2}=\frac{1}{2}\frac{\lambda_{S}}{8\pi}\left[\Lambda_{UV}^{2}-2m_{s}^{2}\frac{\Lambda_{\text{UV}}}{m_{S}}\right]
+	\label{eq:mass_corr2}
+\end{equation} 
+comparing Eqn. \ref{eq:mass_corr1} and \ref{eq:mass_corr2}, one can say that the quadratic divergence is cancelled if for each fermion there exists two scalars (note the factor 1/2) such that $\lambda_{S}=\lambda_{\text{f}}^{2}$. Such cancellation can be brougt out by introducing a new symmetry (called supersymmetry) that transforms a boson into a fermion and vice versa.\\
+%Based on the irrudicible representation of the supersymmetric algebra, single particle states in a sipersymmetric theory is called ``supermultiplets''. A supermultiplet contains an equal number of fermionic and bosonin degrees of freedom ($n_{B}$ and $n_{F}$ respectively). The simplest supermultiplet contains one Weyl fermion (two helicity state with $n_{F}=2$) and and two real scalars (each with $n_{B}=1$). This is called a chiral or matter or scalar supermultiplet. The next simplest supermultiplet consists of a spin-1 boson (two helicity state gives $n_{B}=2$). And it's superpartner is a spin-1/2 Weyl fermion. This kind of supermultiplet is called a gauge or vector supermultiplet. The simplest supersymmetric extension of the SM is called the Minimal Supersymmetric Standard Model (MSSM), which is discussed next.
+
+\subsection{The Minimal Supersymmetric Standard Model}\label{MSSM}
+The Minimal Supersymmetric Standard Model (MSSM) is the simplest extension of the standard model (SM) which contains all the SM particles, their superpartners and two Higgs doublets. The potential in MSSM has the following form:
+\begin{equation}
+	V = (m^{2}_{1} + |\mu|^{2})H_{d}^{\dagger} H_{d} + (m_{2}^{2} + |\mu|^{2})H_{u}^{\dagger}H_{u} + (m_{21}^{2}H_{u}H_{d} + h.c.)\\
+	 + \frac{g^{2}+g^{\prime 2}}{8}(H_{d}^{\dagger}H_{d} - H_{u}^{\dagger}H_{u})^{2} + \frac{g^{2}}{2}|H_{d}^{\dagger}H_{u}|^{2}
+\end{equation}
+Minimization of the Higgs potential gives:
+\begin{equation}
+\langle H_{u}^{0}\rangle =v_{u}/\sqrt{2}~~\text{and}~~\langle H_{d}^{0}\rangle=v_{d}/\sqrt{2} 
+\end{equation}
+where $v_{u}$ and $v_{d}$ are related by:
+\begin{equation}
+	v^{2}=v_{d}^{2}+v_{u}^{2}=\frac{4M_{\PW}^{2}}{g^{2}}=\frac{1}{\sqrt{2}G_{\text{F}}}\approx(246~\GeV)^{2}
+\end{equation}
+The ratio $tan\beta$ is defined as:
+\begin{equation}
+	\text{tan}\beta=v_{u}/v_{d},~~~~~~\text{with}~ 0<\beta<\pi/2
+\end{equation}
+The MSSM predicts the exixtence of five Higgs bosons: 2 CP-even neural scalars: h and \PH (the former being the lighter of the two, by convention), 1 CP-odd neutral scalar: A and 2 charged scalars: $\PH^{+}$ and $\PH^{-}$. Among these five Higgs bosons only the tree level mass of h has an upper bound given by:
+\begin{equation}
+	M_{\text{h}}<M_{\PZ}|\text{cos}\beta|
+\end{equation}
+So if we want this h to be the SM like Higgs boson with mass 125 \GeV, a large positive correction to the tree level mass is required which is provided by the top quark and top squark loop, as follows:
+\begin{equation}
+	M_{\text{h}}^{2}=M_{\PZ}^{2}|\text{cos}{\beta}|+\frac{g^{2}M_{\PQt}^{4}}{8\pi^{2}M_{\PW}^{2}}\left[ln\frac{M_{S}^{2}}{m_{\PQt}^{2}}+\frac{X_{\PQt}^{2}}{M_{S}^{2}}\left(1-\frac{X_{\PQt}^{2}}{M_{S}^{2}}\right)\right]\\
+\end{equation}
+where
+\begin{equation}
+\begin{aligned}
+	X_{\PQt} &= A_{\PQt}-\mu~\text{cot}\beta,
+	\\
+	M_{S}^{2} &= M_{\PSQtDo}M_{\PSQtDt} .
+	\end{aligned}
+\end{equation}
+For minimal mixing scenario ($X_{\PQt}=0$), $M_{\PSQtDo}$ needds to be very high in order to get Higgs with mass 125 \GeV. This scenario is out of the reach of present LHC. But for maximal mixing scenario ($X_{\PQt}=\sqrt{6}M_{S}$), it is possible to get Higgs with 125 \GeV for $M_{\PSQtDo}\sim$ TeV. This scenario is well within the reach of present LHC condition and motivates to search for top squark. The maximal mixing scenario also prefers the high values of $\text{tan}\beta$.
+
+
+
+
 \subsection{The signal process}
+
 We focus on the top squark decays
 $\PSQtDo \to \PQb \PSGcpDo \to \PQb \PSGtpDo \PGnGt \to  \PQb \PGtp \PSGczDo \PGnGt$
  ~and~
@@ -252,6 +303,16 @@ determined by the parameterization
 	}
 	\label{fig:sigFeyn}
 \end{figure}
+
+\subsection{Why \PGt lepton final state}
+The charginos ($\PSGc_{i}^{\pm}$) and neutralinos ($\PSGc_{i}^{0}$) are admixtures of gauginos and higgsinos given by:
+\begin{equation}
+\begin{aligned}
+	\PSGc_{i}^{\pm}&=C_{1i}\PSWpm + C_{2i}\PSH^{\pm} ~~~~~~~~~~~~~~~~~~~~~~~~~~~~\text{with}~i\in[1,2]\\\
+	\PSGc_{i}^{0}&=N_{1i}\PSBz+N_{2i}\PSWz + N_{3i}\PSH_{u}^{0}+N_{4i}\PSH_{d}^{0}
+	\end{aligned}
+\end{equation}
+The higgsino component of the chargonos and neutralinos couples to the lepton-slepton pairs as $M_{\ell}/\text{cos}\beta$. So in the higgsino like scenario ($|C_{2i}|\gg C_{1i}$ and $|N_{3i}|+N_{4i}\gg |N_{1i}|+|N_{2i}|$) and/or high tan$\beta$ scenario, the chargino most often decays to \PQt-leptons
 The search is already performed in di-\tauh final state \cite{CMS:2019lrh} with 2016 and 2017 data combined. In this analysis main focus is given to the semileptonic categories where one \PGt decays hadronically and other leptonically. The probability of decaying two \PGt hadronically is $\approx 42\%$. But if we consider the scenario where one \PGt decays hadronically and other leptonically, then that probability is also $\approx 40\%$. So one expect similar signal yieds as that of di-\tauh final state. This is the motivation for probing the semileptonic channels as well.
 
 \subsection{Search variables}
@@ -263,7 +324,7 @@ The signal event consists of one hard \tauh jets, one lepton ($\PGm$ or \Pe), ha
 
 Generally, this variable carries information about the mass of parent of the visible (vis) and the invisible (inv) particles. However, since there are multiple sources of missing momentum in the signal process, the appropriate variable which can render the parent particle masses is the ``stransverse mass'' \cite{Lester:1999tx, Barr:2003rg, Barr:2009wu}, which is defined in Equation \ref{eqn:mt2}.
 \begin{equation}
-\mTii(\text{vis1, vis2, MET}) = \min_{\ptvec^{~\text{inv1}}+\ptvec^{~\text{inv2}}=\ptvecmiss}[\max\{\mT(\ptvec^{~\text{vis1}},\ptvec^{~\text{inv1}}), \mT(\ptvec^{~\text{vis2}},\ptvec^{~\text{inv2}})\}]
+\mTii(\text{vis1, vis2, \ptmiss}) = \min_{\ptvec^{~\text{inv1}}+\ptvec^{~\text{inv2}}=\ptvecmiss}[\max\{\mT(\ptvec^{~\text{vis1}},\ptvec^{~\text{inv1}}), \mT(\ptvec^{~\text{vis2}},\ptvec^{~\text{inv2}})\}]
 \label{eqn:mt2}
 \end{equation}
 In Equation \ref{eqn:mt2}, since the momenta of the individual invisible particles is not known, the missing energy(\ptmiss) is divided into two components ($\ptvec^{~\text{inv1}}$ and $\ptvec^{~\text{inv2}}$) in such a way that the value of $\mTii$ is minimum. In our case $\mTii$ is computed using the \tauh and $\PGm/\Pe$ and \ptmiss. Then its upper limit in our signal will be at the chargino mass. This is different from the SM background processes. For example, in \ttbar events the upper limit is at the W boson mass. Since this a search, when calculating $\mTii$ for the signal, the mass of the invisible particle in equation \ref{eqn:mt2} is set to zero as the neutralino mass is not known.\\
@@ -366,7 +427,7 @@ It is found using simulated {\PW}+jets events that $R$ varies by ${\approx}15\%$
 The contribution from misidentified \tauh candidates to the $\ell\tauh$ signal region is then evaluated as,
 %\begin{linenomath}
 	\begin{equation}
-	N^{\text{misid, SR}} = R N^{\text{misid, SbR}} = R [N_{\text{data}}^{\text{SbR}} - N_{\text{MC, genuine \tauh}}^{\text{SbR}}],
+	N^{\text{misid, SR}} = R N^{\text{misid, SbR}} = R \left[N_{\text{data}}^{\text{SbR}} - N_{\text{MC, genuine \tauh}}^{\text{SbR}}\right],
 	\end{equation}
 %\end{linenomath}
 where $N_{\text{data}}^{\text{SbR}}$ is the number of events obtained in the sideband region from data, and $N_{\text{MC, genuine \tauh}}^{\text{SbR}}$ represents the contribution to the sideband region from simulated events where the $\tauh$ candidate is genuine.
