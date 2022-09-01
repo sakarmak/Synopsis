@@ -1,0 +1,71 @@
+This is BibTeX, Version 0.99d (TeX Live 2017/Debian)
+Capacity: max_strings=100000, hash_size=100000, hash_prime=85009
+The top-level auxiliary file: synopsis.aux
+The style file: utphys.bst.bst
+Database file #1: synopsis.bib.bib
+I was expecting a `,' or a `}'---line 40 of file synopsis.bib.bib
+ :     
+ :     journal = "Phys. Lett. B",
+(Error may have been on previous line)
+I'm skipping whatever remains of this entry
+Warning--I'm ignoring FARRAR1978575's extra "url" field
+--line 136 of file synopsis.bib.bib
+You're missing a field name---line 1012 of file synopsis.bib.bib
+ :  
+ :  %note = "[Erratum: \DOI{10.1140/epjc/s10052-013-2501-z}]",
+(Error may have been on previous line)
+I'm skipping whatever remains of this entry
+Repeated entry---line 1400 of file synopsis.bib.bib
+ : @article{CMS:2019lrh
+ :                     ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 1431 of file synopsis.bib.bib
+ : @article{Ramond:1971gb
+ :                       ,
+I'm skipping whatever remains of this entry
+Warning--empty author in ATLAS:2014wva
+Warning--empty note in Martin:1997ns
+Warning--empty pages in CMS:2019lrh
+Warning--empty institution in CMS-NOTE-2011-005
+You've used 36 entries,
+            2328 wiz_defined-function locations,
+            877 strings with 11644 characters,
+and the built_in function-call counts, 10289 in all, are:
+= -- 1066
+> -- 284
+< -- 1
++ -- 110
+- -- 74
+* -- 1028
+:= -- 1208
+add.period$ -- 62
+call.type$ -- 36
+change.case$ -- 36
+chr.to.int$ -- 0
+cite$ -- 40
+duplicate$ -- 590
+empty$ -- 1021
+format.name$ -- 74
+if$ -- 2705
+int.to.chr$ -- 0
+int.to.str$ -- 36
+missing$ -- 134
+newline$ -- 146
+num.names$ -- 35
+pop$ -- 167
+preamble$ -- 1
+purify$ -- 0
+quote$ -- 0
+skip$ -- 391
+stack$ -- 0
+substring$ -- 335
+swap$ -- 282
+text.length$ -- 1
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 0
+warning$ -- 4
+while$ -- 75
+width$ -- 38
+write$ -- 309
+(There were 4 error messages)

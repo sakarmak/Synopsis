@@ -1,0 +1,23 @@
+\contentsline {section}{\numberline {1}Introduction}{1}{section.1}
+\contentsline {section}{\numberline {2}Search for associated production of Higgs boson with a top and anti-top pair in the final state of one lepton and one hadronically decaying $\uptau $}{2}{section.2}
+\contentsline {subsection}{\numberline {2.1}The signal process}{2}{subsection.2.1}
+\contentsline {subsection}{\numberline {2.2}Event selection}{3}{subsection.2.2}
+\contentsline {subsection}{\numberline {2.3}Background estimation}{3}{subsection.2.3}
+\contentsline {subsubsection}{\numberline {2.3.1}Estimation of the \IeC {\textquotedblleft }Fake\IeC {\textquotedblright } background}{3}{subsubsection.2.3.1}
+\contentsline {subsection}{\numberline {2.4}Search strategy}{4}{subsection.2.4}
+\contentsline {subsection}{\numberline {2.5}Systematics}{4}{subsection.2.5}
+\contentsline {subsection}{\numberline {2.6}Results}{4}{subsection.2.6}
+\contentsline {subsection}{\numberline {2.7}My contribution to the analysis:}{5}{subsection.2.7}
+\contentsline {section}{\numberline {3}Search for top squark pair production in a final state with two tau leptons in proton-proton collisions at $\sqrt {s} = 13$ TeV}{6}{section.3}
+\contentsline {subsection}{\numberline {3.1}Introduction}{6}{subsection.3.1}
+\contentsline {subsection}{\numberline {3.2}The signal process}{7}{subsection.3.2}
+\contentsline {subsection}{\numberline {3.3}Why \PGt lepton final state}{7}{subsection.3.3}
+\contentsline {subsection}{\numberline {3.4}Search Variables}{8}{subsection.3.4}
+\contentsline {subsection}{\numberline {3.5}Search Region}{9}{subsection.3.5}
+\contentsline {subsection}{\numberline {3.6}Signal Region Selection}{9}{subsection.3.6}
+\contentsline {subsection}{\numberline {3.7}Background estimation}{10}{subsection.3.7}
+\contentsline {subsubsection}{\numberline {3.7.1}Tau lepton pairs from top production}{10}{subsubsection.3.7.1}
+\contentsline {subsubsection}{\numberline {3.7.2}Misidentified hadronically decaying tau lepton candidates}{12}{subsubsection.3.7.2}
+\contentsline {subsection}{\numberline {3.8}Systematics}{12}{subsection.3.8}
+\contentsline {subsection}{\numberline {3.9}Results}{13}{subsection.3.9}
+\contentsline {section}{\numberline {4}Summary}{15}{section.4}
